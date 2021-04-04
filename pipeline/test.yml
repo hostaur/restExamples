@@ -1,10 +1,8 @@
 jobs:
-  - name: buildJob
+  - name: build_job
     plan:
     - get: repo
       trigger: true
-    - task: build
-      file: repo/pipeline/test.yml
 
 resources:
 - name: repo
