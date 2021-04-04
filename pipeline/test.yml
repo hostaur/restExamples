@@ -1,13 +1,13 @@
+jobs:
+  - name: buildJob
+    plan:
+    - get: repo
+      trigger: true
+    - task: build
+      file: repo/pipeline/test.yml
+
 resources:
 - name: repo
   type: git
   source:
     uri: "https://github.com/hostaur/restExamples.git"
-
-jobs:
-- name: build
-  plan:
-  - get: repo
-    trigger: true
-  - task: build
-    file: repo/pipeline/test.yml
