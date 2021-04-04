@@ -6,7 +6,7 @@ resources:
 jobs:
 - name: unit
   plan:
-  - get: pipeline
+  - get: exampleRest
     trigger: true
   - task: test
     file: pipeline/test.yml
