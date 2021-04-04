@@ -3,10 +3,11 @@ resources:
   type: git
   source:
     uri: "https://github.com/hostaur/restExamples.git"
+
 jobs:
-- name: unit
+- name: build
   plan:
-  - get: repo
-    trigger: true
-  - task: test
-    file: repo/pipeline/test.yml
+    - get: repo
+      trigger: true
+    - task: build
+      file: repo/pipeline/test.yml
