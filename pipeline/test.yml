@@ -1,0 +1,12 @@
+resources:
+- name: exampleRest
+  type: git
+  source: {uri: "https://github.com/hostaur/restExamples.git"}
+
+jobs:
+- name: unit
+  plan:
+  - get: pipeline
+    trigger: true
+  - task: test
+    file: pipeline/test.yml
